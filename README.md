@@ -2,8 +2,11 @@
 
 ## Technologies used
 
-- Express
-- Express-handlebars
-- Mongoose
-- Cheerio
-- Axios
+- Node.js
+- MongoDB
+- npm Packages
+  - Express
+  - Express-handlebars
+  - Mongoose
+  - Cheerio
+  - Axios
