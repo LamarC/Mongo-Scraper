@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+const Note = require("./Note");
 
 //Schema constructor ref
-const Schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
 let ArticleSchema = new Schema({
   title: {
@@ -9,14 +10,27 @@ let ArticleSchema = new Schema({
     required: true
   },
 
-  note: {
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  }
+  link: {
+    type: String,
+    required: true
+  },
+
+  notes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Note"
+    }
+  ]
+});
+ArticleSchema.pre("remove", function(next) {
+  // 'this' is the client being removed. Provide callbacks here if you want
+  // to be notified of the calls' result.
+  Note.remove({ article_id: this._id }).exec();
+  next();
 });
 
 //Creates model for the schema above using mongoose
-const Article = mongoose.model("Article", ArticleSchema);
+let Article = mongoose.model("Article", ArticleSchema);
 
 //Export Article model
 module.exports = Article;

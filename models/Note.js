@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 
 //Schema constructor ref
-const Schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
 let NoteSchema = new Schema({
-  title: String,
-  body: String
+  text: {
+    type: String
+  }
 });
 
 //Creates model for the schema above using mongoose

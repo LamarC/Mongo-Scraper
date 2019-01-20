@@ -9,9 +9,9 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 //Require models
-const db = require("./models");
+const NoteArt = require("./models");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 //Init express
 const app = express();
@@ -32,7 +32,7 @@ app.use(express.static("public"));
 const exphbs = require("express-handlebars");
 
 //Connect to the Mongo DB
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/calm-lake-84752";
 
 mongoose.connect(MONGODB_URI);
 
