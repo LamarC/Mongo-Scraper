@@ -10,7 +10,7 @@ let NoteSchema = new Schema({
 });
 
 //Creates model for the schema above using mongoose
-const Note = mongoose.model("Note", NoteSchema);
+let Note = mongoose.model("Note", NoteSchema);
 
 //Export the Note model
 module.exports = Note;
