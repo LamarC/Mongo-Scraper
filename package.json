@@ -4,7 +4,8 @@
   "description": "MongoDB and Mongoose scraper app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,11 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1"
-  }
+  },
+  "devDependencies": {}
 }
