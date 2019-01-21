@@ -4,17 +4,20 @@ const Note = require("./Note");
 //Schema constructor ref
 let Schema = mongoose.Schema;
 
+//Creates new user Schema obj
 let ArticleSchema = new Schema({
   title: {
     type: String,
     required: true
   },
 
+  //link is required
   link: {
     type: String,
     required: true
   },
 
+  //Stores note id
   notes: [
     {
       type: Schema.Types.ObjectId,
@@ -23,8 +26,7 @@ let ArticleSchema = new Schema({
   ]
 });
 ArticleSchema.pre("remove", function(next) {
-  // 'this' is the client being removed. Provide callbacks here if you want
-  // to be notified of the calls' result.
+
   Note.remove({ article_id: this._id }).exec();
   next();
 });

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 //Schema constructor ref
 let Schema = mongoose.Schema;
 
+//Creates a new Schema obj
 let NoteSchema = new Schema({
   text: {
     type: String
